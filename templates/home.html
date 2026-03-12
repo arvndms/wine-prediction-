@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beer Servings</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+    <h2>Beer Servings Predictor</h2>
+    <br><br>
+    <div class="infographics">
+        <div class="card">
+            <h3>Average Beer Servings 🍺</h3>
+                <p>{{ avg_beer }} </p>
+        </div>
+        <div class="card">
+            <h3>Average Wine Servings 🍷</h3>
+                <p>{{ avg_wine }} </p>
+        </div>
+        <div class="card">
+            <h3>Average Spirit Servings🥃</h3>
+                <p>{{ avg_spirit }} </p>
+        </div>
+        
+    </div>
+    <div class="form">
+    <form  action="{{url_for('predict')}}" method="post">
+        <h3>Input Your Values Here</h3>
+        <div class="input-box">
+        <label>Beer Serving</label>
+        <input type="number" name="Beer">
+        </div>
+        <div class="input-box">
+        <label>Spirit Serving</label>
+        <input type="number" name="Spirit">
+        </div>
+        <div class="input-box">
+        <label>Wine Serving</label>
+        <input type="number" name="Wine">
+        </div>
+        <div class="input-box">
+        <label>Continent</label>
+        <select name="continent">
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="North America">North America</option>
+            <option value="Africa">Africa</option>
+            <option value="Oceania">Oceania</option>
+            <option value="South America">South America</option>
+        </select>
+        </div>
+        
+        <button type="submit">Predict</button>
+
+    </form>
+    </div>
+</body>
+</html>
